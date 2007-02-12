@@ -1,5 +1,5 @@
 Summary:	LaTeX plugin for gedit
-Summary(pl.UTF-8):   Wtyczka LaTeX dla gedita
+Summary(pl.UTF-8):	Wtyczka LaTeX dla gedita
 Name:		gedit-plugin-LaTeXPlugin
 Version:	20061112
 Release:	1
