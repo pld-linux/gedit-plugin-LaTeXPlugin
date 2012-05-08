@@ -1,15 +1,15 @@
 Summary:	LaTeX plugin for gedit
 Summary(pl.UTF-8):	Wtyczka LaTeX dla gedita
 Name:		gedit-plugin-LaTeXPlugin
-Version:	20061112
+Version:	0.2
 Release:	1
 License:	GPL
 Group:		X11/Applications/Editors
-Source0:	http://www.michaels-website.de/files/LaTeXPlugin-%{version}.tar.bz2
-# Source0-md5:	b567b881101855a239da311d8bd7eb4c
+Source0:	http://downloads.sourceforge.net/gedit-latex/LaTeXPlugin-%{version}.tar.gz
+# Source0-md5:	714bbe2c24337a8a8ea3e444a5d729fc
 Patch0:		%{name}-path.patch
 URL:		http://live.gnome.org/Gedit/LaTeXPlugin
-Requires:	gedit2 >= 2.16.0
+Requires:	gedit >= 2.16.0
 Requires:	perl
 Requires:	rubber
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -22,15 +22,15 @@ Wtyczka LaTeX dla gedita.
 
 %prep
 %setup -qc
-%patch0 -p1
+#%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/LaTeXPlugin
+install -d $RPM_BUILD_ROOT%{_libdir}/gedit/plugins/GeditLaTeXPlugin
 
-mv LaTeXPlugin/ChangeLog .
-cp -R LaTeXPlugin $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins/
-cp LaTeXPlugin.gedit-plugin $RPM_BUILD_ROOT%{_libdir}/gedit-2/plugins
+mv GeditLaTeXPlugin/ChangeLog .
+cp -R GeditLaTeXPlugin $RPM_BUILD_ROOT%{_libdir}/gedit/plugins/
+cp GeditLaTeXPlugin.gedit-plugin $RPM_BUILD_ROOT%{_libdir}/gedit/plugins
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -38,5 +38,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog
-%{_libdir}/gedit-2/plugins/LaTeXPlugin
-%{_libdir}/gedit-2/plugins/*.gedit-plugin
+%{_libdir}/gedit/plugins/GeditLaTeXPlugin
+%{_libdir}/gedit/plugins/*.gedit-plugin
